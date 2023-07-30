@@ -56,3 +56,45 @@ footer ul {
     font-size: 8px;
     margin: 0;
 }
+
+p a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    color: #446e9b;
+}
+
+.a-link {
+    text-decoration: none;
+    color: #d8dadf;
+}
+
+.bg-color {
+    background-color: #272a33;
+}
+
+.footer-menu li {
+    margin: 15px 0 15px 0;
+}
+
+.card-img-top {
+    width: 160px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.sub-title {
+    font-size: 16px;
+    padding-top: 15px;
+    color: #528EAF;
+}
+
+.container{
+    padding:20px 0 20px 0;
+}
