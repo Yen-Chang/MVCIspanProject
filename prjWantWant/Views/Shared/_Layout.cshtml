@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - WantWant - 專家接案，打工兼差</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <!--== Icofont Icon CSS ==-->
+    <link href="~/Content/icofont.css" rel="stylesheet" />
+    <!-- 引用Bootstrap.css -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- 使用style.css -->
+    <link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- narbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="~/Images/LOGO.png" class="img-fluid" alt="Logo">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="切換導覽" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        @Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("找工作", "", "", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("找專家", "", "", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("部落格", "", "", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+            </div>
+            @*<div class="d-grid gap-2 d-md-flex justify-content-md-end">*@                
+                <p class="text-decoration-none pe-2">@Html.ActionLink("會員專區", "", "", new { area = "" }, new {})</p>
+                <p>@Html.ActionLink("註冊", "", "", new { area = "" }, new { @class = "btn btn btn-outline-primary me-md-2" })</p>
+                <p>@Html.ActionLink("登入", "", "", new { area = "" }, new { @class = "btn btn-primary" })</p>
+                @*<button class="btn btn btn-outline-primary me-md-2" type="button">註冊</button>*@
+                @*<button class="btn btn-primary" type="button">登入</button>*@
+            </div>
+        </div>
+    </nav>
+
+    <!-- narbar end -->
+
+    @RenderBody()
+        <!-- footer -->
+        <footer id="footer" class="pt-5 bg-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 footer-list">
+                        <img src="~/Images/LOGO.png" class="img-fluid" alt="Logo"><br>
+                        <a href="mailto:service@wantwant.com">service@wantwant.com</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 footer-list">
+                        <h5 class="text-uppercase">Company</h5>
+                        <ul>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">Press</a>
+                            </li>
+                            <li>
+                                <a href="#">Bonus</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 footer-list">
+                        <h5 class="text-uppercase">Product</h5>
+                        <ul>
+                            <li>
+                                <a href="#">Enterprice</a>
+                            </li>
+                            <li>
+                                <a href="#">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#">Security</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 footer-list">
+                        <h5 class="text-uppercase">Resource</h5>
+                        <ul>
+                            <li>
+                                <a href="#">Guilde</a>
+                            </li>
+                            <li>
+                                <a href="#">Help Center</a>
+                            </li>
+                            <li>
+                                <a href="#">API</a>
+                            </li>
+                            <li>
+                                <a href="#">Events</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-end bg-dark mt-5 py-2">
+                <p class="text-center">&copy; @DateTime.Now.Year 我的 ASP.NET 應用程式 <span id="yearShow"></span></p>
+            </div>
+        </footer>
+        <!-- footer end -->
+        <!-- 引用 jquery.js -->
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <!-- 引用 bootstrap.js -->
+        <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
