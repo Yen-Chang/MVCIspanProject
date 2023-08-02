@@ -8,6 +8,11 @@ namespace prjWantWant.Controllers
 {
     public class MemberManagementController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -19,11 +24,13 @@ namespace prjWantWant.Controllers
             return View(prod);
         }
 
+        /*
         [HttpPost]
         public ActionResult Edit(MemberAccount pIn)
         {
+
             NewIspanProjectEntities db = new NewIspanProjectEntities();
-            MemberAccount pDb = db.MemberAccount.FirstOrDefault(p => p.AccountID == pIn.AccountID);
+            MemberAccount pDb = db.MemberStatusList.FirstOrDefault(p => p.AccountID == pIn.AccountID);
             if (pDb != null)
             {                
                 pDb.Name = pIn.Name;
@@ -38,11 +45,12 @@ namespace prjWantWant.Controllers
                 pDb.MemberStatusList.First().UpdateTime = pIn.MemberStatusList.First().UpdateTime;
                 // 檢舉原因
                 pDb.MemberStatusList.First().StatusChangeReasonList.StatusChangeReason = pIn.MemberStatusList.First().StatusChangeReasonList.StatusChangeReason;
-                
+
                 db.SaveChanges();
             }
             return RedirectToAction("List");
         }
+        */
 
         public ActionResult Delete(int? id)
         {

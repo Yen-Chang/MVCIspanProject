@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewIspanProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MemberAccount">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="AccountStatus" Type="bit" Nullable="false" />
+    <Property Name="MemberTotalPoint" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="IDCardNo" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="2" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="10" />
+    <Property Name="BitrhDay" Type="datetime" />
+    <Property Name="PhoneNo" Type="nchar" MaxLength="10" />
+    <Property Name="MemberPhoto" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="MemberStatusList">
+    <Key>
+      <PropertyRef Name="StatusChangeID" />
+    </Key>
+    <Property Name="StatusChangeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="UpdateUser" Type="int" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="StatusChangeReasonID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceContact">
+    <Key>
+      <PropertyRef Name="ServiceContactID" />
+    </Key>
+    <Property Name="ServiceContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="ComplaintTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComplaintContent" Type="nvarchar(max)" />
+    <Property Name="ProcessStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusChangeReasonList">
+    <Key>
+      <PropertyRef Name="StatusChangeReasonID" />
+    </Key>
+    <Property Name="StatusChangeReasonID" Type="int" Nullable="false" />
+    <Property Name="StatusChangeReason" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_MemberStatusList_MemberAccount">
+    <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+    <End Role="MemberStatusList" Type="Self.MemberStatusList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberAccount">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="MemberStatusList">
+        <PropertyRef Name="UpdateUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberStatusList_StatusChangeReason">
+    <End Role="StatusChangeReasonList" Type="Self.StatusChangeReasonList" Multiplicity="1" />
+    <End Role="MemberStatusList" Type="Self.MemberStatusList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusChangeReasonList">
+        <PropertyRef Name="StatusChangeReasonID" />
+      </Principal>
+      <Dependent Role="MemberStatusList">
+        <PropertyRef Name="StatusChangeReasonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceContact_MemberAccount">
+    <End Role="MemberAccount" Type="Self.MemberAccount" Multiplicity="1" />
+    <End Role="ServiceContact" Type="Self.ServiceContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberAccount">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="ServiceContact">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NewIspanProjectModelStoreContainer">
+    <EntitySet Name="MemberAccount" EntityType="Self.MemberAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberStatusList" EntityType="Self.MemberStatusList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceContact" EntityType="Self.ServiceContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusChangeReasonList" EntityType="Self.StatusChangeReasonList" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MemberStatusList_MemberAccount" Association="Self.FK_MemberStatusList_MemberAccount">
+      <End Role="MemberAccount" EntitySet="MemberAccount" />
+      <End Role="MemberStatusList" EntitySet="MemberStatusList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberStatusList_StatusChangeReason" Association="Self.FK_MemberStatusList_StatusChangeReason">
+      <End Role="StatusChangeReasonList" EntitySet="StatusChangeReasonList" />
+      <End Role="MemberStatusList" EntitySet="MemberStatusList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceContact_MemberAccount" Association="Self.FK_ServiceContact_MemberAccount">
+      <End Role="MemberAccount" EntitySet="MemberAccount" />
+      <End Role="ServiceContact" EntitySet="ServiceContact" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

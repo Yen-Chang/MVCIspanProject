@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewIspanProjectModelStoreContainer" CdmEntityContainer="NewIspanProjectEntities">
+    <EntitySetMapping Name="MemberAccount">
+      <EntityTypeMapping TypeName="NewIspanProjectModel.MemberAccount">
+        <MappingFragment StoreEntitySet="MemberAccount">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+          <ScalarProperty Name="MemberTotalPoint" ColumnName="MemberTotalPoint" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="IDCardNo" ColumnName="IDCardNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="BitrhDay" ColumnName="BitrhDay" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MemberPhoto" ColumnName="MemberPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberStatusList">
+      <EntityTypeMapping TypeName="NewIspanProjectModel.MemberStatusList">
+        <MappingFragment StoreEntitySet="MemberStatusList">
+          <ScalarProperty Name="StatusChangeID" ColumnName="StatusChangeID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="StatusChangeReasonID" ColumnName="StatusChangeReasonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceContact">
+      <EntityTypeMapping TypeName="NewIspanProjectModel.ServiceContact">
+        <MappingFragment StoreEntitySet="ServiceContact">
+          <ScalarProperty Name="ServiceContactID" ColumnName="ServiceContactID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="ComplaintTitle" ColumnName="ComplaintTitle" />
+          <ScalarProperty Name="ComplaintContent" ColumnName="ComplaintContent" />
+          <ScalarProperty Name="ProcessStatus" ColumnName="ProcessStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusChangeReasonList">
+      <EntityTypeMapping TypeName="NewIspanProjectModel.StatusChangeReasonList">
+        <MappingFragment StoreEntitySet="StatusChangeReasonList">
+          <ScalarProperty Name="StatusChangeReason" ColumnName="StatusChangeReason" />
+          <ScalarProperty Name="StatusChangeReasonID" ColumnName="StatusChangeReasonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

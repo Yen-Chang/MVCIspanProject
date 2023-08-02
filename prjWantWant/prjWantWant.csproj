@@ -146,6 +146,7 @@
     <Compile Include="StatusChangeReasonList.cs">
       <DependentUpon>WantModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CAccountStatus.cs" />
     <Compile Include="WantModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +180,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\Mstyle.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\Mstyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -210,6 +213,27 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\main.js" />
+    <Content Include="Scripts\lib\chart\chart.min.js" />
+    <Content Include="Scripts\lib\easing\easing.js" />
+    <Content Include="Scripts\lib\easing\easing.min.js" />
+    <Content Include="Scripts\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Scripts\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Scripts\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Scripts\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Scripts\lib\tempusdominus\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="Scripts\lib\tempusdominus\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Scripts\lib\tempusdominus\js\moment-timezone.min.js" />
+    <Content Include="Scripts\lib\tempusdominus\js\moment.min.js" />
+    <Content Include="Scripts\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <Content Include="Scripts\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Scripts\lib\waypoints\waypoints.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="WantModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -243,11 +267,13 @@
       <DependentUpon>WantModel.edmx</DependentUpon>
     </Content>
     <Content Include="Views\MemberManagement\List.cshtml" />
+    <Content Include="Views\MemberManagement\index.cshtml" />
+    <Content Include="Scripts\lib\owlcarousel\LICENSE" />
+    <Content Include="Scripts\lib\waypoints\links.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Views\Background\" />
   </ItemGroup>
   <ItemGroup>
